@@ -96,23 +96,29 @@ http://127.0.0.1:8000
 
 ---
 
-## 📸 Screenshots
+# 📸 Screenshot Gallery
 
-### Home Page
+## 🏠 Home Page
 
-(Add Screenshot)
+![Home Page](screenshots/homepage.png)
 
-### Login
+---
 
-(Add Screenshot)
+## 🔐 Login Page
 
-### Detection
+![Login Page](screenshots/login.png)
 
-(Add Screenshot)
+---
 
-### Result
+## 📰 News Detection
 
-(Add Screenshot)
+![Detection](screenshots/detection.png)
+
+---
+
+## ✅ Prediction Result
+
+![Result](screenshots/result.png)
 
 ---
 
