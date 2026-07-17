@@ -138,10 +138,4 @@ http://127.0.0.1:8000
 
 Computer Engineering Graduate
 
-GitHub
 
-https://github.com/gauri426
-
-LinkedIn
-
-(Add your LinkedIn)
