@@ -1,0 +1,195 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>User Login | Fake News Detection</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Poppins",sans-serif;
+}
+
+/* BODY */
+
+body{
+background:linear-gradient(135deg,#1d2671,#c33764);
+color:white;
+min-height:100vh;
+display:flex;
+flex-direction:column;
+}
+
+/* NAVBAR */
+
+nav{
+background:rgba(0,0,0,0.3);
+display:flex;
+justify-content:center;
+padding:15px 0;
+backdrop-filter:blur(10px);
+}
+
+.nav-link{
+color:white;
+margin:0 20px;
+text-decoration:none;
+font-weight:400;
+transition:0.3s;
+}
+
+.nav-link:hover{
+color:#00e0ff;
+}
+
+/* LOGIN SECTION */
+
+.login-section{
+flex:1;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:40px 20px;
+}
+
+/* CARD */
+
+.login-card{
+background:rgba(255,255,255,0.12);
+backdrop-filter:blur(15px);
+border-radius:20px;
+padding:40px;
+width:100%;
+max-width:400px;
+box-shadow:0 10px 25px rgba(0,0,0,0.4);
+text-align:center;
+}
+
+/* TITLE */
+
+.login-card h2{
+margin-bottom:25px;
+font-weight:400;
+color:#00e0ff;
+}
+
+/* INPUTS */
+
+.login-card input{
+width:100%;
+padding:12px;
+margin-bottom:15px;
+border-radius:10px;
+border:none;
+outline:none;
+font-size:14px;
+}
+
+/* BUTTON */
+
+.login-btn{
+width:100%;
+padding:12px;
+background:#00e0ff;
+border:none;
+border-radius:25px;
+color:black;
+font-weight:500;
+transition:0.3s;
+}
+
+.login-btn:hover{
+background:#00b4cc;
+transform:scale(1.05);
+}
+
+/* OTP LINK */
+
+.otp-link{
+display:block;
+margin-top:15px;
+color:#ddd;
+text-decoration:none;
+font-size:14px;
+}
+
+.otp-link:hover{
+color:#00e0ff;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:15px;
+color:#ccc;
+font-size:0.9rem;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+<a href="/" class="nav-link">Home</a>
+<a href="/about/" class="nav-link">About</a>
+<a href="/user_login/" class="nav-link">Login</a>
+<a href="/user_registration/" class="nav-link">Signup</a>
+</nav>
+
+<!-- LOGIN FORM -->
+
+<section class="login-section">
+
+<div class="login-card">
+
+<h2>User Login</h2>
+
+<form method="POST">
+{% csrf_token %}
+
+<input name="email" placeholder="Enter Email or Username" required>
+
+<input name="password" type="password" placeholder="Enter Password" required>
+
+<button type="submit" class="login-btn">Login</button>
+
+<a href="/otp_login_home/" class="otp-link">Login with OTP</a>
+
+</form>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+© 2026 Fake News Detection System
+</footer>
+
+<!-- SweetAlert -->
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script>
+{% for message in messages %}
+swal("{{message}}");
+{% endfor %}
+</script>
+
+</body>
+</html>

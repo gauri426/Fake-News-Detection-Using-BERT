@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About | Fake News Detection System</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #1d2671, #c33764);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    nav {
+      background: rgba(0, 0, 0, 0.3);
+      display: flex;
+      justify-content: center;
+      padding: 15px 0;
+      backdrop-filter: blur(10px);
+    }
+
+    nav .nav-link {
+      color: white;
+      margin: 0 25px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    nav .nav-link:hover {
+      color: #00e0ff;
+    }
+
+    .about-section {
+      background: rgba(0, 0, 0, 0.4);
+      margin: 60px auto;
+      padding: 60px 30px;
+      width: 90%;
+      max-width: 1100px;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .about-section h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #00e0ff;
+      font-weight: 700;
+      margin-bottom: 30px;
+    }
+
+    .about-section p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #f0f0f0;
+      text-align: justify;
+      margin-bottom: 20px;
+    }
+
+    .about-section h3 {
+      color: #ffd369;
+      font-weight: 600;
+      margin-top: 25px;
+      margin-bottom: 15px;
+    }
+
+    footer.site-footer {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 30px 0;
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+
+    footer .footer-content h3 {
+      font-weight: 600;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #00e0ff;
+    }
+
+    footer .footer-links {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      margin: 15px 0;
+      padding: 0;
+    }
+
+    footer .footer-links li {
+      margin: 0 15px;
+    }
+
+    footer .footer-links a {
+      text-decoration: none;
+      color: white;
+      transition: color 0.3s ease;
+    }
+
+    footer .footer-links a:hover {
+      color: #00e0ff;
+    }
+
+    .footer-credit {
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 🌐 Navigation Bar -->
+  <nav>
+    <a href="/" class="nav-link">Home</a>
+    <a href="/about/" class="nav-link">About</a>
+    <a href="/user_login/" class="nav-link">User</a>
+    <a href="/admin_login/" class="nav-link">Admin</a>
+  </nav>
+
+  <!-- 🧠 About Section -->
+  <section class="about-section">
+    <h1>About Fake News Detection System</h1>
+
+    <p>
+      The <strong>Fake News Detection System</strong> is an intelligent web application designed to help users verify
+      the authenticity of online news articles. Using advanced <strong>Natural Language Processing (NLP)</strong> and
+      deep learning models, the system can distinguish between factual and misleading information in real-time.
+    </p>
+
+    <h3>🔍 Why Fake News Detection?</h3>
+    <p>
+      In today’s digital world, misinformation spreads rapidly across social media and online platforms, influencing
+      public opinion and creating social unrest. Detecting fake news is crucial for promoting information reliability
+      and building a more informed society.
+    </p>
+
+    <h3>🤖 Role of BERT Model</h3>
+    <p>
+      This system uses the <strong>BERT (Bidirectional Encoder Representations from Transformers)</strong> model,
+      a state-of-the-art NLP architecture by Google. BERT understands language context in both directions,
+      making it ideal for analyzing subtle linguistic patterns in news content.
+    </p>
+    <p>
+      During prediction, the input text is processed using BERT to extract word embeddings, which are then
+      analyzed by a classification layer to determine whether the news is <strong>REAL</strong> or <strong>FAKE</strong>.
+    </p>
+
+    <h3>🎯 Key Features</h3>
+    <ul>
+      <li>Text-based fake news detection using BERT</li>
+      <li>Clean and user-friendly interface</li>
+      <li>Fast prediction results with confidence score</li>
+      <li>Supports multiple news categories and formats</li>
+    </ul>
+
+    <h3>👨‍💻 Project Objective</h3>
+    <p>
+      The primary objective is to develop an accurate and efficient fake news detection framework leveraging
+      machine learning and NLP models, ensuring users can validate news articles with a single click.
+    </p>
+  </section>
+
+  <!-- 🌍 Footer -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <h3>Fake News Detection System</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About</a></li>
+      <li><a href="/user_login/">User</a></li>
+        <li><a href="/admin_login/">Admin</a></li>
+      </ul>
+      <p class="footer-credit">© 2025 Fake News Detection System. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

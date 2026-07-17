@@ -1,0 +1,312 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Dashboard | Fake News Detection System</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Poppins",sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#1d2671,#c33764);
+color:white;
+min-height:100vh;
+}
+
+/* Navbar */
+
+.navbar{
+background:rgba(0,0,0,0.35);
+backdrop-filter:blur(10px);
+box-shadow:0 4px 15px rgba(0,0,0,0.4);
+}
+
+.navbar-brand{
+font-weight:700;
+color:#00e0ff !important;
+font-size:1.3rem;
+}
+
+.nav-link{
+color:white !important;
+margin-left:20px;
+transition:0.3s;
+}
+
+.nav-link:hover{
+color:#00e0ff !important;
+}
+
+/* Header */
+
+.dashboard-header{
+text-align:center;
+margin-top:120px;
+margin-bottom:40px;
+}
+
+.dashboard-header h2{
+font-weight:700;
+font-size:2.2rem;
+}
+
+.dashboard-header p{
+color:#ddd;
+}
+
+/* Stats Box */
+
+.stats-box{
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(10px);
+border-radius:15px;
+padding:25px;
+text-align:center;
+margin-bottom:25px;
+box-shadow:0 6px 20px rgba(0,0,0,0.3);
+}
+
+.stats-box h3{
+font-weight:700;
+color:#00e0ff;
+}
+
+/* Cards */
+
+.dashboard-card{
+background:rgba(255,255,255,0.12);
+backdrop-filter:blur(15px);
+border-radius:18px;
+padding:35px;
+border:1px solid rgba(255,255,255,0.25);
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+transition:0.3s;
+text-align:center;
+}
+
+.dashboard-card:hover{
+transform:translateY(-8px);
+background:rgba(255,255,255,0.18);
+}
+
+.card-title{
+font-weight:600;
+color:#00e0ff;
+margin-bottom:10px;
+}
+
+/* Button */
+
+.btn-admin{
+background:#00e0ff;
+border:none;
+color:black;
+font-weight:600;
+border-radius:25px;
+padding:10px 22px;
+transition:0.3s;
+}
+
+.btn-admin:hover{
+background:#00b4cc;
+transform:scale(1.05);
+}
+
+/* Footer */
+
+footer{
+text-align:center;
+margin-top:60px;
+padding:20px;
+color:#ccc;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+
+<div class="container">
+
+<a class="navbar-brand">Fake News Admin Panel</a>
+
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+
+<span class="navbar-toggler-icon"></span>
+
+</button>
+
+<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+
+<ul class="navbar-nav">
+
+<li class="nav-item">
+<a class="nav-link active" href="#">Dashboard</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="{% url 'view_user' %}">Users</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="{% url 'news_history' %}">News History</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="{% url 'admin_logout' %}">Logout</a>
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</nav>
+
+<!-- Dashboard Header -->
+
+<div class="container dashboard-header">
+
+<h2>Admin Dashboard</h2>
+
+<p>Manage users, monitor fake news predictions and oversee the platform.</p>
+
+</div>
+
+<!-- Statistics -->
+
+<div class="container">
+
+<div class="row text-center">
+
+<div class="col-md-4">
+
+<div class="stats-box">
+
+<h3>{{total_users}}</h3>
+
+<p>Total Registered Users</p>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="stats-box">
+
+<h3>{{total_predictions}}</h3>
+
+<p>Total News Checked</p>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="stats-box">
+
+<h3>{{fake_news}}</h3>
+
+<p>Fake News Detected</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Admin Cards -->
+
+<div class="container mt-4">
+
+<div class="row justify-content-center">
+
+<div class="col-md-4 mb-4">
+
+<div class="dashboard-card">
+
+<h5 class="card-title">👥 Manage Users</h5>
+
+<p>View all registered users and manage their accounts.</p>
+
+<a href="/view_user/" class="btn btn-admin">View Users</a>
+
+</div>
+
+</div>
+
+<div class="col-md-4 mb-4">
+
+<div class="dashboard-card">
+
+<h5 class="card-title">📰 News Detection History</h5>
+
+<p>Check all news predictions made by users according to the date.</p>
+
+<a href="/news_history/" class="btn btn-admin">View History</a>
+
+</div>
+
+</div>
+
+<div class="col-md-4 mb-4">
+
+<div class="dashboard-card">
+
+<h5 class="card-title">📊 System Analytics</h5>
+
+<p>Track system performance and fake news statistics.</p>
+
+<a href="/view_stat/" class="btn btn-admin">View Analytics</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+© 2026 Fake News Detection System | Admin Dashboard
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script>
+
+{% for message in messages %}
+swal("{{message}}");
+{% endfor %}
+
+</script>
+
+</body>
+</html>

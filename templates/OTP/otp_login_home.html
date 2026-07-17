@@ -1,0 +1,193 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>OTP Login | Fake News Detection</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Poppins",sans-serif;
+}
+
+/* BODY */
+
+body{
+background:linear-gradient(135deg,#1d2671,#c33764);
+color:white;
+min-height:100vh;
+display:flex;
+flex-direction:column;
+}
+
+/* NAVBAR */
+
+nav{
+background:rgba(0,0,0,0.3);
+display:flex;
+justify-content:center;
+padding:15px 0;
+backdrop-filter:blur(10px);
+}
+
+.nav-link{
+color:white;
+margin:0 20px;
+text-decoration:none;
+font-weight:400;
+transition:0.3s;
+}
+
+.nav-link:hover{
+color:#00e0ff;
+}
+
+/* OTP SECTION */
+
+.otp-section{
+flex:1;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:40px 20px;
+}
+
+/* CARD */
+
+.otp-card{
+background:rgba(255,255,255,0.12);
+backdrop-filter:blur(15px);
+border-radius:20px;
+padding:40px;
+width:100%;
+max-width:400px;
+box-shadow:0 10px 25px rgba(0,0,0,0.4);
+text-align:center;
+}
+
+/* TITLE */
+
+.otp-card h3{
+margin-bottom:25px;
+font-weight:400;
+color:#00e0ff;
+}
+
+/* INPUT */
+
+.otp-card input{
+width:100%;
+padding:12px;
+margin-bottom:15px;
+border-radius:10px;
+border:none;
+outline:none;
+font-size:14px;
+}
+
+/* BUTTON */
+
+.otp-btn{
+width:100%;
+padding:12px;
+background:#00e0ff;
+border:none;
+border-radius:25px;
+color:black;
+font-weight:500;
+transition:0.3s;
+}
+
+.otp-btn:hover{
+background:#00b4cc;
+transform:scale(1.05);
+}
+
+/* LINK */
+
+.alt-login{
+display:block;
+margin-top:15px;
+color:#ffe082;
+text-decoration:none;
+font-size:14px;
+}
+
+.alt-login:hover{
+color:#ffffff;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:15px;
+color:#ccc;
+font-size:0.9rem;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+<a href="/" class="nav-link">Home</a>
+<a href="/about/" class="nav-link">About</a>
+<a href="/user_login/" class="nav-link">Login</a>
+<a href="/user_registration/" class="nav-link">Signup</a>
+</nav>
+
+<!-- OTP FORM -->
+
+<section class="otp-section">
+
+<div class="otp-card">
+
+<h3>User Login With OTP</h3>
+
+<form method="POST">
+{% csrf_token %}
+
+<input type="email" name="email" placeholder="Enter your Email" required>
+
+<button type="submit" class="otp-btn">Get OTP</button>
+
+<a href="/user_login/" class="alt-login">Login With Password</a>
+
+</form>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+© 2026 Fake News Detection System
+</footer>
+
+<!-- SweetAlert -->
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script>
+{% for message in messages %}
+swal("{{message}}");
+{% endfor %}
+</script>
+
+</body>
+</html>
